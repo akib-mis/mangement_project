@@ -26,8 +26,6 @@ app.add_middleware(
 )
 app.include_router(product_router)
 
-# Products.Base.metadata.create_all(bind=engine)
-
 @app.on_event("startup")
 def on_startup():
     
