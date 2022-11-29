@@ -13,6 +13,6 @@ SECRET = os.getenv(
     "e92d1aa5f67ce24713cf638550f5daa84ef5ea3466ae29af8b1ad16fbe6c5fbb",
 )
 
-DATABASE_URL = (
+MGMT_DATABASE_URL = (
     f"postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 )

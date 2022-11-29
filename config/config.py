@@ -2,12 +2,12 @@ from sqlalchemy import create_engine
 from typing import Generator
 from sqlalchemy.orm import sessionmaker,Session
 from sqlalchemy.ext.declarative import DeclarativeMeta, declarative_base
-from config.db import DATABASE_URL
+from config.db import MGMT_DATABASE_URL
 
 Base: DeclarativeMeta = declarative_base()
 
 engine = create_engine(
-    DATABASE_URL
+    MGMT_DATABASE_URL
 )
 session_maker = sessionmaker(autocommit=False,expire_on_commit = False ,autoflush=False, bind=engine)
 
