@@ -1,4 +1,4 @@
-from sqlalchemy import Boolean, Column, Integer, String
+from sqlalchemy import Boolean, Column, Integer, String,TEXT,JSON
 from sqlalchemy.orm import relationship
 from config.config import Base
 
@@ -12,5 +12,6 @@ class Products(Base):
     title = Column(String)
     price = Column(Integer)
     size = Column(Integer)
+    specification = Column(JSON)
     description = Column(String)
     image_url = Column(String)

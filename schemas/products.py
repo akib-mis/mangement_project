@@ -1,5 +1,6 @@
-from pydantic import BaseModel
-from typing import Optional
+from pydantic import BaseModel, Json
+from typing import Optional, Any, Text
+import json
 
 
 class ProductGet(BaseModel):
@@ -12,6 +13,7 @@ class ProductsDetails(ProductGet):
     model: str
     price: int
     description: str
+    specification: dict
     image_url: str
 
 
@@ -20,6 +22,7 @@ class ProductReadDetails(BaseModel):
     name: Optional[str]
     title: Optional[str]
     description: Optional[str]
+    specification: Optional[dict]
     size: Optional[int]
     model: Optional[str]
     price: Optional[int]

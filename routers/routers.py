@@ -51,6 +51,8 @@ def get_by_id(
         try:
             product_id = product_req.id
             response = product_dal.get_product(product_id=product_id)
+            if not response:
+                return JSONResponse(content="Content not found", status_code=status.HTTP_404_NOT_FOUND)
             return response
         except Exception as e:
             return JSONResponse(content=f"Error: {str(e)}", status_code=status.HTTP_400_BAD_REQUEST)
